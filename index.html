@@ -9,11 +9,36 @@
         #dog-image{
             display: flex;
         }
+        .button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+#dog-image-container{
+    height:fit-content;
+    width: fit-content;
+    display: flex;
+}
     </style>
 </head>
 <body>
     
-    <button id="fetch-dog-image-button" style="margin: 10px;">CLICK Me to Get new Images</button>
+    <button class="button" id="fetch-dog-image-button" style="margin: 10px;">CLICK Me to Get new Images</button>
     <div id="dog-image-container" style="margin: 20px;">
         <img src="" alt="" id="dog-image">
     </div>
