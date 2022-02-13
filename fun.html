@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Prerna</title>
+    <style>
+        #dog-image{
+            display: flex;
+        }
+        .button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+#dog-image-container{
+    height:fit-content;
+    width: fit-content;
+    display: flex;
+}
+body{
+    max-width: 500px;
+  margin: auto;
+  background-color: pink;
+}
+img{
+border: 10px solid green;
+max-width: 900px;
+}
+    </style>
+</head>
+<body>
+    
+    <button class="button" id="fetch-dog-image-button" style="margin: 10px;">CLICK Me to Get new Images</button>
+    <div id="dog-image-container" style="margin: 20px;">
+        <img src="" alt="" id="dog-image">
+    </div>
+    <script>
+        // https://dog.ceo/api/breeds/image/random
+        let btn = document.getElementById("fetch-dog-image-button");
+        btn.addEventListener("click", (event) =>  getData());
+     
+        function getData(){
+         fetch("https://dog.ceo/api/breeds/image/random").then(res => res.json()).then(getUrl);
+        }
+        // getData();
+        function getUrl(res){
+            
+            // console.log(res.message); console.log("Hello");
+            document.getElementById("dog-image").attributes[0].value = res.message;
+        }
+        // console.log(getUrl().message());
+
+    //    let img = document.getElementById("dog-image").attributes[0].value;
+       
+    //    console.log(img);
+      
+    //    btn.addEventListener("click")
+
+
+    </script>
+</body>
+</html>
